@@ -16,9 +16,11 @@ const Select = ({
   const [value, setValue] = useState();
   const [collapsed, setCollapsed] = useState(true);
   const changeValue = (newValue) => {
-    onChange();
+    onChange(newValue);
+    // valeur selectionner "newValue" passée à la props "onChange"
     setValue(newValue);
-    setCollapsed(newValue);
+    setCollapsed(!collapsed);
+    //gestion de la collapse : valeur boolean donc "true" ou "false" ("newValue" n'est pas forcement un boolean)
   };
   return (
     <div className={`SelectContainer ${type}`} data-testid="select-testid">
