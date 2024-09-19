@@ -13,7 +13,7 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const {last} = useData()
+  const { last } = useData();
   return (
     <>
       <header>
@@ -24,7 +24,9 @@ const Page = () => {
           <Slider />
         </section>
         <section className="ServicesContainer">
-          <h2 id="#nos-services" className="Title">Nos services</h2>
+          <h2 id="nos-services" className="Title">
+            Nos services
+          </h2>
           <p>Nous organisons des événements sur mesure partout dans le monde</p>
           <div className="ListContainer">
             <ServiceCard imageSrc="/images/priscilla-du-preez-Q7wGvnbuwj0-unsplash1.png">
@@ -53,13 +55,15 @@ const Page = () => {
           </div>
         </section>
         <section className="EventsContainer">
-          <h2 id="#nos-realisations" className="Title">
+          <h2 id="nos-realisations" className="Title">
             Nos réalisations
           </h2>
           <EventList />
         </section>
         <section className="PeoplesContainer">
-          <h2 id="#notre-equipe" className="Title">Notre équipe</h2>
+          <h2 id="notre-equipe" className="Title">
+            Notre équipe
+          </h2>
           <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
           <div className="ListContainer">
             <PeopleCard
@@ -156,6 +160,6 @@ const Page = () => {
       </footer>
     </>
   );
-}
+};
 
 export default Page;
