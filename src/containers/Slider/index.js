@@ -16,10 +16,11 @@ const Slider = () => {
 
   const nextCard = () => {
     timeoutRef.current = setTimeout(
-      () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
+      () => setIndex(index < byDateDesc?.length - 1 ? index + 1 : 0),
       5000
     );
     // add -1 to "byDateDesc.length" to go from 0 to 2 in setIndex() (index 3 n'existe pas d'où le slide blanc)
+    // byDateDesc? : accède à la propriété 'length' si 'byDateDesc' existe sinon renvoi 'undefined'
   };
 
   useEffect(() => {
@@ -48,12 +49,6 @@ const Slider = () => {
               <h3>{event.title}</h3>
               <p>{event.description}</p>
               <div>{getMonth(new Date(event.date))}</div>
-              {/* <div>
-                {new Intl.DateTimeFormat("fr", { month: "long" }).format(
-                  new Date(event.date)
-                )}
-              </div> */}
-              {/* correction de la syntaxe pour afficher le mois correctement */}
             </div>
           </div>
         </div>
