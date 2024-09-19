@@ -20,7 +20,7 @@ export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
 
-  const last = data
+  const last = data && data.events
     ? data.events.reduce((acc, evt) => {
         if (new Date(evt.date) > new Date(acc.date)) {
           return evt;
