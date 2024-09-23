@@ -11,6 +11,7 @@ import Icon from "../../components/Icon";
 import Form from "../../containers/Form";
 import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
+import ModalEvent from "../../containers/ModalEvent";
 
 const Page = () => {
   const { last } = useData();
@@ -119,14 +120,26 @@ const Page = () => {
       </main>
       <footer className="row">
         <div className="col presta">
+          
           <h3>Notre derniére prestation</h3>
-          <EventCard
-            imageSrc={last?.cover || ""}
-            title={last?.title || ""}
-            date={new Date(last?.date)}
-            small
-            label="boom"
-          />
+          <Modal
+            Content={
+              last ? <ModalEvent event={last} /> : <div>no event available</div>
+            }
+          >
+            {({ setIsOpened }) => (
+              <EventCard
+                onClick={() => setIsOpened(true)}
+                imageSrc={last?.cover || ""}
+                title={last?.title || ""}
+                date={new Date(last?.date)}
+                small
+                label="boom"
+              />
+            )}
+          </Modal>
+          {/* Ajout de la modal et de son contenu ("ModalEvent") avec les donnée du "last" event */}
+          {/* Ajout "onClick" pour rendre EventCard clickable et ouvre la modal */}
         </div>
         <div className="col contact">
           <h3>Contactez-nous</h3>
