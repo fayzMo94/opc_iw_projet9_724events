@@ -10,9 +10,9 @@ const Slider = () => {
   const timeoutRef = useRef(null); // Ref pour stocker le timeout ID
 
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) > new Date(evtB.date) ? -1 : 1
+    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
   );
-  // by date descending : du plus grand au plus petit (date la plus récente dabord) donc ">" à la place de "<"
+  // du plus ancien au plus récent
 
   const nextCard = () => {
     timeoutRef.current = setTimeout(
