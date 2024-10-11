@@ -12,7 +12,6 @@ const Select = ({
   titleEmpty,
   label,
   type = "normal",
-  // required = true,
 }) => {
   const [value, setValue] = useState();
   const [collapsed, setCollapsed] = useState(true);
@@ -21,7 +20,7 @@ const Select = ({
     // valeur selectionner "newValue" passée à la props "onChange"
     setValue(newValue);
     setCollapsed(!collapsed);
-    //gestion de la collapse : valeur boolean donc "true" ou "false" ("newValue" n'est pas forcement un boolean)
+    //gestion de la collapse
   };
   return (
     <div className={`SelectContainer ${type}`} data-testid="select-testid">
@@ -39,7 +38,6 @@ const Select = ({
                     defaultChecked={!value}
                     name="selected"
                     type="radio"
-                    // required={required}
                   />{" "}
                   Toutes
                 </li>
@@ -50,7 +48,6 @@ const Select = ({
                     defaultChecked={value === s}
                     name="selected"
                     type="radio"
-                    // required={required}
                   />{" "}
                   {s}
                 </li>
@@ -97,7 +94,6 @@ Select.propTypes = {
   titleEmpty: PropTypes.bool,
   label: PropTypes.string,
   type: PropTypes.string,
-  // required: PropTypes.bool,
 };
 
 Select.defaultProps = {
@@ -106,7 +102,6 @@ Select.defaultProps = {
   label: "",
   type: "normal",
   name: "select",
-  // required: true,
 };
 
 export default Select;

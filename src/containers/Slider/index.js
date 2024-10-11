@@ -61,7 +61,7 @@ const Slider = () => {
               type="radio"
               name="radio-button"
               checked={index === radioIdx}
-              // le radio "checked" doit changer selon le state de la const "index"
+              // le bouton devrait être coché si notre state INDEX est égal à l'index du bouton radio
               onChange={() => setRadioBtn(radioIdx)}
               // add onChange to be able to click and change radio buttons
             />

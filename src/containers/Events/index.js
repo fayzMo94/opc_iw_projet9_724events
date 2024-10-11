@@ -19,6 +19,7 @@ const EventList = () => {
       ? data?.events
       : data?.events.filter((event) => type === event.type)) || []
       //filtre les events selon le type sélectionner (montre tous les events si "type" n'est pas définis ("false"))
+      //pour avoir le type (categorie), on change la valeur dans le composant SELECT
   ).filter((event, index) => {
     if (
       (currentPage - 1) * PER_PAGE <= index &&

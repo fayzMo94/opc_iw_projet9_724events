@@ -15,3 +15,4 @@ export const MONTHS = {
 
 export const getMonth = (date) => MONTHS[date.getMonth() + 1];
 // correction affichage de la date en ajoutant +1 après "date.getMonth()"
+

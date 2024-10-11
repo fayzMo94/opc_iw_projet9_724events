@@ -6,7 +6,7 @@ import Button, { BUTTON_TYPES } from "../../components/Button";
 
 const mockContactApi = () =>
   new Promise((resolve) => {
-    setTimeout(resolve, 500);
+    setTimeout(resolve, 1000);
   });
 
 const Form = ({ onSuccess, onError }) => {
@@ -25,13 +25,7 @@ const Form = ({ onSuccess, onError }) => {
       const values = Object.fromEntries(formData.entries());
 
       // Validate form inputs
-      if (
-        !values.nom ||
-        !values.prenom ||
-        !values.email ||
-        !values.message ||
-        !values.selected
-      ) {
+      if (!values.nom || !values.prenom || !values.email || !values.message) {
         setErrorMessage("");
         setErrorMessage("Veuillez remplir tous les champs");
         setSending(false);
@@ -48,6 +42,7 @@ const Form = ({ onSuccess, onError }) => {
 
       try {
         await mockContactApi();
+
         setSending(false);
         onSuccess();
         // appel de la fonction onSuccess() en cas de succès (le test 'expect' l'appel de cette fonction)
@@ -66,12 +61,11 @@ const Form = ({ onSuccess, onError }) => {
           <Field placeholder="" label="Nom" name="nom" />
           <Field placeholder="" label="Prénom" name="prenom" />
           <Select
-            selection={["Personel", "Entreprise"]}
+            selection={["Personnel", "Entreprise"]}
             onChange={() => null}
-            label="Personel / Entreprise"
+            label="Personnel / Entreprise"
             type="large"
             titleEmpty
-            // required
             name="selected"
           />
           <Field placeholder="" label="Email" name="email" />

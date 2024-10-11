@@ -25,6 +25,7 @@ const Page = () => {
           <Slider />
         </section>
         <section className="ServicesContainer">
+          {/* Ajout ID */}
           <h2 id="nos-services" className="Title">
             Nos services
           </h2>
@@ -56,12 +57,14 @@ const Page = () => {
           </div>
         </section>
         <section className="EventsContainer">
+          {/* Ajout ID */}
           <h2 id="nos-realisations" className="Title">
             Nos réalisations
           </h2>
           <EventList />
         </section>
         <section className="PeoplesContainer">
+          {/* Ajout ID */}
           <h2 id="notre-equipe" className="Title">
             Notre équipe
           </h2>
@@ -120,7 +123,6 @@ const Page = () => {
       </main>
       <footer className="row">
         <div className="col presta">
-          
           <h3>Notre derniére prestation</h3>
           <Modal
             Content={
